@@ -75,5 +75,13 @@ public class Casos extends TestCase{
         	float expected = 407.33334f;
         	assertEquals(expected , instance.cs() ,0.1);
         }
+     // Moneda no es USD y es Manager - calculateYearBonus()
+        public void testCalculateYearBonusNoUSDManager() {
+        	Employee instance =new Employee(350,"MXN",15, EmployeeType.Manager);
+        	float expected = 718.5f;
+        	assertEquals(expected , instance.cs() ,0.1);
+        }
+    
+        
 
 }
