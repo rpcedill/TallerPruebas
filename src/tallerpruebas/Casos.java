@@ -69,7 +69,7 @@ public class Casos extends TestCase{
             assertEquals(expected , instance.CalculateYearBonus() ,0.1);
             }
         
-        // Moneda no es USD y es Manager - cs()
+        // Moneda no es USD y es Manager - cs() 
         public void testCsNoUSDManager() {
         	Employee instance =new Employee(350,"MXN",15, EmployeeType.Manager);
         	float expected = 407.33334f;
@@ -79,12 +79,12 @@ public class Casos extends TestCase{
         public void testCalculateYearBonusNoUSDManager() {
         	Employee instance =new Employee(350,"MXN",15, EmployeeType.Manager);
         	float expected = 718.5f;
-        	assertEquals(expected , instance.cs() ,0.1);
+        	assertEquals(expected , instance.CalculateYearBonus() ,0.1);
         }
 	
 	//Moneda es USD y es worker -cs()
         @Test
-        public void testnoUSDWorker1(){
+        public void testUSDWorker1(){
             Employee instance=new Employee(100,"USD",16, EmployeeType.Worker);
             float expected=164.3333f;
             assertEquals(expected , instance.cs() ,0.1);
@@ -92,7 +92,7 @@ public class Casos extends TestCase{
 
     	//Moneda es USD y es worker -calculateYearBonus()
         @Test
-        public void testnoUSDWorker2(){
+        public void testUSDWorker2(){
             Employee instance=new Employee(100,"USD",16, EmployeeType.Worker);
             float expected=386f;
             assertEquals(expected , instance.CalculateYearBonus() ,0.1);
