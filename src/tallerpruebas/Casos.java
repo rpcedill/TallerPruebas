@@ -52,6 +52,20 @@ public class Casos extends TestCase{
 		assertEquals(expected , instance.CalculateYearBonus() ,0.1);
 		}
 	
-	
+	//Moneda es USD y es manager -cs()
+        @Test
+        public void testUSDManager1(){
+            Employee instance=new Employee(300,"USD",10, EmployeeType.Manager);
+            float expected=371.3333f;
+            assertEquals(expected , instance.cs() ,0.1);
+            }
+
+    	//Moneda es USD y es manager -calculateYearBonus()
+        @Test
+        public void testUSDManager2(){
+            Employee instance=new Employee(300,"USD",10, EmployeeType.Manager);
+            float expected=686f;
+            assertEquals(expected , instance.CalculateYearBonus() ,0.1);
+            }
 
 }
