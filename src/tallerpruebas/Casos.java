@@ -4,7 +4,7 @@ import org.junit.Test;
 import junit.framework.TestCase;
 
 public class Casos extends TestCase{
-
+/*
     @Test
 	public void test(){
 		//Moneda USD, es supervisor, mes par
@@ -20,7 +20,7 @@ public class Casos extends TestCase{
 		float expected=467.83334f;
 		assertEquals(expected , instance.cs() ,0);
 	}
-	
+	*/
 	@Test
 	public void testCs_noUsdSupervisor() {
 		//Moneda no es USD, es supervisor- cs
@@ -35,6 +35,23 @@ public class Casos extends TestCase{
 		float resultadoEsperado = 573.0f;
 		assertEquals(resultadoEsperado,em.CalculateYearBonus(),0.1);
 	}
+
+	//Moneda es USD y es supervisor -cs()
+	@Test
+	public void testUSDSupervisor1(){
+		Employee instance=new Employee(365,"USD",15, EmployeeType.Supervisor);
+		float expected=434.5833f;
+		assertEquals(expected , instance.cs() ,0.1);
+		}
+	
+	//Moneda es USD y es supervisor -calculateYearBonus()
+	@Test
+	public void testUSDSupervisor2(){
+		Employee instance=new Employee(365,"USD",15, EmployeeType.Supervisor);
+		float expected=558f;
+		assertEquals(expected , instance.CalculateYearBonus() ,0.1);
+		}
+	
 	
 
 }
