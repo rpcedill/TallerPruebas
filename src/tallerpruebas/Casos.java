@@ -82,19 +82,19 @@ public class Casos extends TestCase{
         	assertEquals(expected , instance.cs() ,0.1);
         }
 	
-	//Moneda USD, es supervisor, mes par
-	@Test
-	public void Test(){
-		Employee instance=new Employee(400,"USD",10,EmployeeType.Supervisor);
-		float expected=403.5f;
-		assertEquals(expected, intance.cs() , 0.1);
-	}
-	
-	//Moneda USD, es supervisor, mes impar
-	@Test
-	public void Test(){
-		Employee instance=new Employee(400, "USD", EmployeeType.Supervisor);
-		float expected=467.83334f;
-		assertEquals(expected, instance.cs(), 0.1);
-	}
+	//Moneda es USD y es worker -cs()
+        @Test
+        public void testnoUSDWorker1(){
+            Employee instance=new Employee(100,"USD",16, EmployeeType.Worker);
+            float expected=164.3333f;
+            assertEquals(expected , instance.cs() ,0.1);
+            }
+
+    	//Moneda es USD y es worker -calculateYearBonus()
+        @Test
+        public void testnoUSDWorker2(){
+            Employee instance=new Employee(100,"USD",16, EmployeeType.Worker);
+            float expected=386f;
+            assertEquals(expected , instance.CalculateYearBonus() ,0.1);
+            }
 }
