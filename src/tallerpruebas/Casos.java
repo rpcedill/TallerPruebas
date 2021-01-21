@@ -89,7 +89,12 @@ public class Casos extends TestCase{
 		float expected=403.5f;
 		assertEquals(expected, intance.cs() , 0.1);
 	}
-    
-        
-
+	
+	//Moneda USD, es supervisor, mes impar
+	@Test
+	public void Test(){
+		Employee instance=new Employee(400, "USD", EmployeeType.Supervisor);
+		float expected=467.83334f;
+		assertEquals(expected, instance.cs(), 0.1);
+	}
 }
